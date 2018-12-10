@@ -1,0 +1,7 @@
+# if used db setting for db_helpers; don't change the key, please
+ep:
+  db: ep
+  user: liuxiaofang
+  password: xxxxxx
+  host: 192.168.4.109
+  port: 3306
