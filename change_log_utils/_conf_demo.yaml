@@ -3,5 +3,5 @@ ep:
   db: ep
   user: liuxiaofang
   password: xxxxxx
-  host: 192.168.4.109
+  host: 
   port: 3306

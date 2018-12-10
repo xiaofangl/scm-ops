@@ -1490,7 +1490,6 @@ class OperationData(object):
 
     # 写到文件
     def output_txt(self, filename, obj):
-        # M01.CHJ.A81.SR3.180925-7.xml
         arg1 = self.from_xml.split('-')[0]
         p = re.compile(r'[0-9]{6}')
         arg2 = p.findall(self.to_xml)
@@ -1520,9 +1519,9 @@ class OperationData(object):
                    "daily_build_history_data/')")
 @click.option("--branch-name",
               envvar="BRANCH-NAME",
-              default="O-M01-MASTER",
+              default="MASTER",
               help="branch of the repo"
-                   "(e.g., --branch-name 'O-M01-MASTER')")
+                   "(e.g., --branch-name 'MASTER')")
 @click.pass_context
 def cli(ctx, workspace, branch_name):
     ctx.obj = dict()
@@ -1533,24 +1532,24 @@ def cli(ctx, workspace, branch_name):
 @cli.command()
 @click.option("--gerrit-user",
               envvar="USER-GERRIT",
-              default="chjscm",
+              default="scm",
               help="username use connection gerrit"
-                   "(e.g., --gerrit-user 'chjscm')")
+                   "(e.g., --gerrit-user 'scm')")
 @click.option("--branch-name",
               envvar="BRANCH-NAME",
-              default="O-M01-MASTER",
+              default="master",
               help="branch of the repo"
-                   "(e.g., --branch-name 'O-M01-MASTER')")
+                   "(e.g., --branch-name 'xxx')")
 @click.option("--gerrit-address",
               envvar="ADDRESS-GERRIT",
-              default="gerrit.it.chehejia.com",
+              default="gerrit.com",
               help="address use connection gerrit"
-                   "(e.g., --gerrit-address 'gerrit.it.chehejia.com')")
+                   "(e.g., --gerrit-address 'gerritxxx.com')")
 @click.option("--gerrit-port",
               envvar="PORT-GERRIT",
-              default="29418",
+              default="2941",
               help="port use connection gerrit"
-                   "(e.g., --gerrit-port '29418')")
+                   "(e.g., --gerrit-port '294xx')")
 @click.option("--manifest-project",
               envvar="MANIFEST-PROJECT",
               default="/platform/manifest",
@@ -1597,12 +1596,12 @@ def init(ctx, branch_name, manifest_project, repo_url, gerrit_user,
               envvar="FROM-MANIFEST",
               default="",
               help="if --mode choose manual; diff from manifest.xml, "
-                   "(e.g., --from-manifest 'M01.CHJ.A81.SR3.181114-74.xml')")
+                   "(e.g., --from-manifest 'ss1114-74.xml')")
 @click.option("--to-manifest",
               envvar="TO-MANIFEST",
               default="",
               help="if --mode choose manual; diff to manifest.xml"
-                   "(e.g., --to-manifest 'M01.CHJ.A81.SR3.181116-76.xml')")
+                   "(e.g., --to-manifest '181116-76.xml')")
 @click.option("--result-file-path",
               envvar="RESULT-TO-FILE",
               default="",
